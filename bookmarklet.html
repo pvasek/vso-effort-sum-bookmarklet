@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<title>VSO effort sum bookmarklet</title>
+	</head>
 <body>
 	<h3>
 	Bookmarklet which sums up effort for all selected PBIs on the backlog list.
 	</h3>
-	<div>
+	<p>
 		<ol>
 			<li>Drag the link bellow to your bookmark bar</li>
 			<li>Go to your backlog</li>
 			<li>Select PBIs/Bugs you want sum up effort for</li>
 			<li>Click to your "Effort Sum" link in bookmarks</li>
 		</ol>
-	</div>
-	<div>
-	<a href="javascript:(function showEffortSum() {     var count = 0;     var content = '';     var selectedRowsSelectors = [        '.productbacklog-grid-results .grid-row-selected',        '.productbacklog-grid-results .grid-row-selected-blur',    ];    var effortSelector = '.backlog-excluded-effort';    document        .querySelectorAll(selectedRowsSelectors.join(', '))        .forEach(function(i) {             var effortDiv = i.querySelector(effortSelector);             if (effortDiv && effortDiv.textContent) {                 var effortText = effortDiv.textContent;                 if (effortText && effortText.trim() !== '') {                     count += parseInt(effortText, 10);                 }             }         });     alert(count); })()">Effort Sum</a>
-	</div>
+	</p>
+	<p>
+		The source code can be found here: 
+		<a href='https://github.com/pvasek/vso-effort-sum-bookmarklet'>https://github.com/pvasek/vso-effort-sum-bookmarklet</a>
+	</p>
+	<p>
+		<a href="javascript:(function showEffortSum() {     var count = 0;     var content = '';     var selectedRowsSelectors = [        '.productbacklog-grid-results .grid-row-selected',        '.productbacklog-grid-results .grid-row-selected-blur',    ];    var effortSelector = '.backlog-excluded-effort';    document        .querySelectorAll(selectedRowsSelectors.join(', '))        .forEach(function(i) {             var effortDiv = i.querySelector(effortSelector);             if (effortDiv && effortDiv.textContent) {                 var effortText = effortDiv.textContent;                 if (effortText && effortText.trim() !== '') {                     count += parseInt(effortText, 10);                 }             }         });     alert(count); })()">Effort Sum</a>
+	</p>
 <body>
 </html>
