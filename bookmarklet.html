@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<h3>
+	Bookmarklet which sums up effort for all selected PBIs on the backlog list.
+	</h3>
+	<div>
+		<ol>
+			<li>Drag the link bellow to your bookmark bar</li>
+			<li>Go to your backlog</li>
+			<li>Select PBIs/Bugs you want sum up effort for</li>
+			<li>Click to your "Effort Sum" link in bookmarks</li>
+		</ol>
+	</div>
+	<div>
+	<a href="javascript:(function showEffortSum() {     var count = 0;     var content = '';     var selectedRowsSelectors = [        '.productbacklog-grid-results .grid-row-selected',        '.productbacklog-grid-results .grid-row-selected-blur',    ];    var effortSelector = '.backlog-excluded-effort';    document        .querySelectorAll(selectedRowsSelectors.join(', '))        .forEach(function(i) {             var effortDiv = i.querySelector(effortSelector);             if (effortDiv && effortDiv.textContent) {                 var effortText = effortDiv.textContent;                 if (effortText && effortText.trim() !== '') {                     count += parseInt(effortText, 10);                 }             }         });     alert(count); })()">Effort Sum</a>
+	</div>
+<body>
+</html>

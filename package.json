@@ -1,0 +1,23 @@
+{
+  "name": "vso-effort-sum-bookmarklet",
+  "version": "1.0.0",
+  "description": "Simple boorkmarklet to get sum of effort for selected items in TFS 2015 backlog.",
+  "main": "bookmarklet.js",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pvasek/vso-effort-sum-bookmarklet.git"
+  },
+  "keywords": [
+    "vso",
+    "tfs"
+  ],
+  "author": "pvasek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pvasek/vso-effort-sum-bookmarklet/issues"
+  },
+  "homepage": "https://github.com/pvasek/vso-effort-sum-bookmarklet#readme"
+}
